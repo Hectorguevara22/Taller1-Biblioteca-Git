@@ -8,6 +8,24 @@ package com.mycompany.biblioteca;
  *
  * @author Keiner
  */
-public class Cliente {
+public class Cliente extends Persona{
+  String email;
+
+    public Cliente() {
+    }
+
+    public Cliente(String id, String nombre, String telefono, String email) {
+        super(id, nombre, telefono);
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+  
     
 }
