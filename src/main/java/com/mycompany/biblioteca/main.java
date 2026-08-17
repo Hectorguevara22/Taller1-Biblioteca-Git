@@ -27,39 +27,61 @@ public class main {
     }
 
     public static Cliente read() {
-        System.out.println("consulta y listado de clientes"
-                + "1 consulta global"
-                + "2 consulta selectiva");
-        int a = sc.nextInt();
-        sc.nextLine();
-        switch (a) {
-            case 1:
-                for (Cliente cliente : clientes) {
-                    System.out.println("id :" + cliente.getId());
-                    System.out.println("nombre :" + cliente.getNombre());
-                    System.out.println("telefono :" + cliente.getTelefono());
-                    System.out.println("email : " + cliente.getEmail());
-                    System.out.println("----------------------");
-
-                }
-                break;
-            case 2:
-                System.out.println("Identificación del cliente:");
-                String ide = sc.nextLine();
-
-                for (Cliente cliente : clientes) {
-                    if (cliente.getId().equals(ide)) {
-                        System.out.println("id: " + cliente.getId());
-                        System.out.println("nombre: " + cliente.getNombre());
-                        System.out.println("telefono: " + cliente.getTelefono());
-                        System.out.println("email: " + cliente.getEmail());
-                    }
-                     }
-
-                System.out.println("Cliente no encontrado.");
-                break;
-            default:
-                System.out.println("Opción inválida.");
+        System.out.println("consulta y listado de clientes");
+        for (Cliente cliente : clientes) {
+            System.out.println("id :" + cliente.getId());
+            System.out.println("nombre :" + cliente.getNombre());
+            System.out.println("telefono :" + cliente.getTelefono());
+            System.out.println("email : " + cliente.getEmail());
+            System.out.println("----------------------");
 
         }
     }
+
+    public static Cliente buscar() {
+        System.out.println("consulta selectiva de clientes");
+        System.out.println("identificacion del cliente que desea buscar");
+        String ide = sc.nextLine();
+        for (Cliente cliente : clientes) {
+            if (cliente.getId().equals(ide)) {
+                System.out.println("id :" + cliente.getId());
+                System.out.println("nombre :" + cliente.getNombre());
+                System.out.println("telefono :" + cliente.getTelefono());
+                System.out.println("email : " + cliente.getEmail());
+                System.out.println("----------------------");
+            } else {
+                System.out.println("cliente no encontrado");
+            }
+
+        }
+    }
+
+    public static Cliente actualizar() {
+        System.out.println("actualizacion de clientes");
+        System.out.println("identificacion del cliente que desea actualizar");
+        String ide = sc.nextLine();
+        for (Cliente cliente : clientes) {
+            if (cliente.getId().equals(ide)) {
+                System.out.println("id :" + cliente.getId());
+                System.out.println("nombre :" + cliente.getNombre());
+                System.out.println("telefono :" + cliente.getTelefono());
+                System.out.println("email : " + cliente.getEmail());
+                System.out.println("----------------------");
+                System.out.println("nuevo nombre :");
+                String nombre = sc.nextLine();
+                System.out.println("nuevo telefono :");
+                String telefono = sc.nextLine();
+                System.out.println("nuevo correo :");
+                String correo = sc.nextLine();
+                cliente.setNombre(nombre);
+                cliente.setTelefono(telefono);
+                cliente.setEmail(correo);
+
+                return cliente;
+            }
+        }
+        System.out.println("Cliente no encontrado");
+        return null;
+
+    }
+}
