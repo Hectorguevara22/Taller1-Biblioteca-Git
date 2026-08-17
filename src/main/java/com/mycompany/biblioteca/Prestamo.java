@@ -8,12 +8,12 @@ package com.mycompany.biblioteca;
  *
  * @author Keiner
  */
-public class Prestamos {
-    String idPrestamo;
-    Cliente cliente;
-    Libro libro;
-    String fecha;
-    String estado;
+public class Prestamo {
+   private String idPrestamo;
+   private Cliente cliente;
+   private Libro libro;
+   private String fecha;
+   private String estado;
 
     public String getIdPrestamo() {
         return idPrestamo;
