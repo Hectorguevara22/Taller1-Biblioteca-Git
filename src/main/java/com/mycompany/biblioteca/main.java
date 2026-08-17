@@ -55,12 +55,12 @@ public class main {
                 return libro;
             }
         }
-        System.out.println("Cliente no encontrado");
+        System.out.println("libro no encontrado");
         return null;
     }
 
     public static Libro actualizar() {
-        System.out.println("consulta selectiva de libro");
+        System.out.println("actualizacion de libro");
         System.out.println("codigo del libro");
         String codigo = sc.nextLine();
         for (Libro libro : libros) {
@@ -83,7 +83,26 @@ public class main {
                 return libro;
             }
         }
-        System.out.println("Cliente no encontrado");
+        System.out.println("libro no encontrado");
         return null;
+    }
+    public static Libro eliminar(){
+       System.out.println("actualizacion de libro");
+        System.out.println("codigo del libro");
+        String codigo = sc.nextLine();
+        for (Libro libro : libros) {
+            if (libro.getCodigo().equals(codigo)) {
+                System.out.println("codigo" + libro.getCodigo());
+                System.out.println("titulo" + libro.getTitulo());
+                System.out.println("año de publicacion" + libro.getYearpublic());
+                System.out.println("autor" + libro.getAutor());
+                System.out.println("estado" + libro.isDisponible());
+                libro.remove(libros);
+                System.out.println("libro eliminado correctamente");
+                return libro;
+            }
+        }
+        System.out.println("libro no encontrado");
+        return null;  
     }
 }
