@@ -84,4 +84,26 @@ public class main {
         return null;
 
     }
+
+    public static Cliente eliminar() {
+        System.out.println("eliminacion de clientes");
+        System.out.println("identificacion del cliente que desea eliminar");
+        String ide = sc.nextLine();
+        for (Cliente cliente : clientes) {
+            if (cliente.getId().equals(ide)) {
+                System.out.println("id :" + cliente.getId());
+                System.out.println("nombre :" + cliente.getNombre());
+                System.out.println("telefono :" + cliente.getTelefono());
+                System.out.println("email : " + cliente.getEmail());
+                System.out.println("----------------------");
+
+                Cliente.remove(clientes);
+                System.out.println("Cliente eliminado correctamente");
+
+                return cliente;
+            }
+        }
+        System.out.println("Cliente no encontrado");
+        return null;
+    }
 }
