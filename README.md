@@ -13,9 +13,6 @@ de una biblioteca. Almacenamiento en memoria (ArrayList).
 
 ```mermaid
 graph TD
-    A[Inicio] --> B[Fin]
-```
-graph TD
 
     %% Capa de Interfaz de Usuario
     subgraph UI ["Capa de Interfaz de Usuario (ui)"]
